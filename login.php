@@ -1,12 +1,6 @@
 <?php                                       
 
-$host="localhost";
-$user="root";
-$password="";     
-$db="demo";
-
-mysql_connect($host,$user,$password);
-mysql_select_db($db);
+include('db.php');
 
 if(isset($_POST['username'])){
     
@@ -15,9 +9,9 @@ if(isset($_POST['username'])){
     
     $sql="select * from loginform where user='".$uname."'AND Pass='".$password."' limit 1";
     
-    $result=mysql_query($sql);
+    $result=mysqli_query($con,$sql);
     
-    if(mysql_num_rows($result)==1){
+    if(mysqli_num_rows($result)==1){
         echo " You Have Successfully Logged in";
         exit();
     }
@@ -66,7 +60,7 @@ label{font-size:20px; color:white;}
 	<div class="row">                                  
 	                                               
 		<div class="col-md-4 col-sm-4 col-xs-12">         
-		<form id="log">                                         
+		<form id="log" method="post">                                         
 			<h1> Student login</h1>                        
 			<img class="img img-responsive img-circle" src="image/login.gif">
 				<div class="form-group">
@@ -86,25 +80,7 @@ label{font-size:20px; color:white;}
 		
 		<div class="col-md-4 col-sm-4 col-xs-12"></div>
 		
-		<div class="col-md-4 col-sm-4 col-xs-12">
-		<form id="log">                                                            
-			<h1> Staff/Teacher login</h1>
-			<img class="img img-responsive img-circle" src="image/login.gif">
-				<div class="form-group">
-					<label>Username</label>
-					<input type="username" class="form-control" placeholder="Email">
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input type="password" class="form-control" placeholder="Password">
-				</div>
-				<div class="checkbox">
-					<label><input type="checkbox"> Remember me</label>
-				</div>
-				<button type="submit" class="btn btn-success btn-block "><a href="https://www.superdatascience.com/pages/machine-learnings">Login</a></button>
-			</form>
 		
-		</div>
 	</div>
 </div>
 </body>
