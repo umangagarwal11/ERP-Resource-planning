@@ -1,25 +1,27 @@
 <?php                                       
 
 include('db.php');
-
+session_start();
 if(isset($_POST['username'])){
     
     $uname=$_POST['username'];
     $password=$_POST['password'];
     
-    $sql="select * from loginform where user='".$uname."'AND Pass='".$password."' limit 1";
+    $sql="select * from studenttable where user='".$uname."'AND Pass='".$password."' limit 1";
     
     $result=mysqli_query($con,$sql);
     
     if(mysqli_num_rows($result)==1){
         echo " You Have Successfully Logged in";
-        exit();
+        $_SESSION['student']=$uname;
+		header('location:studenthome.php');
+    }else if(mysqli_num_rows(mysqli_query($con,"select * from stafftable where user='".$uname."'AND Pass='".$password."' limit 1"))==1){
+        echo " You Have Successfully Logged in";
+        $_SESSION['staff']=$uname;
+		header('location:staffhome.php');
+    }else{
+		echo 'Wrong username or password';
     }
-    else{
-        echo " You Have Entered Incorrect Password";
-        exit();
-    }
-        
 }
 ?>
 
@@ -61,7 +63,7 @@ label{font-size:20px; color:white;}
 	                                               
 		<div class="col-md-4 col-sm-4 col-xs-12">         
 		<form id="log" method="post">                                         
-			<h1> Student login</h1>                        
+			<h1> Login</h1>                        
 			<img class="img img-responsive img-circle" src="image/login.gif">
 				<div class="form-group">
 					<label>Username</label>
