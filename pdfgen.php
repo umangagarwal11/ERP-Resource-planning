@@ -45,7 +45,7 @@ $pdf->AddPage();
 $pdf->SetAutoPageBreak(true);
 $pdf->SetFont('Times',null,20);
 $pdf->Ln(20);
-$pdf->Cell(0,10,'Payment for '.$_SESSION['username'].' for the year 2019-20 successful.','',1,'L'); 
+$pdf->Cell(0,10,'Payment for '.$_SESSION['student'].' for the year 2019-20 successful.','',1,'L'); 
 $pdf->Cell(0,15,'Transaction id.- '.$a.'.','',1,'L');
 $pdf->Cell(0,10,'Keep this for your future reference.','',1,'L');
 $pdf->Output();}
