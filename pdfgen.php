@@ -57,7 +57,6 @@ $pdf->Output();}
     
 	<title > Admin login and registeration </title>
 	<link rel = "stylesheet " type = "text/css" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel = "stylesheet" type = "text/css" href = "./style.css" >
 </head>
 <body>
 <form action="" method = "post" class="ml-auto mr-auto mt-auto mb-auto">
