@@ -44,7 +44,7 @@ tr:nth-child(even) {
 			{	
 				echo '  <tr>
 							<td align="center">'.$row[1].'</td>
-							<td align="center" style="width:auto !important;"><a href="./uploads/'.$row[0].'_'.$row[2].'_'.$row[1].'.pdf" class="btn btn-primary" download="'.$row[0].'_'.$row[2].'_'.$row[1].'.pdf">	Download</a></td>
+							<td align="center" style="width:auto !important;"><a href="./uploads/'.$row[0].'_'.$row[1].'.pdf" class="btn btn-primary" download="'.$row[0].'_'.$row[2].'_'.$row[1].'.pdf">	Download</a></td>
 						</tr>';}
 			echo '</table>';
 	
