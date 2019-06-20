@@ -17,8 +17,8 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
+  border: 1px solid #575757  ;
+  text-align: center;
   padding: 8px;
 }
 
@@ -30,9 +30,9 @@ tr:nth-child(even) {
 </head>
 <body>
 <br><br>
-<div class="card" align="center" style="width:50%;margin-left:25%; padding:2% 2% 1% 2%;">
+<div class="card col-12 col-md-6 offset-md-3" align="center" style=" padding:2% 2% 1% 2%;">
 <form action="" method = "post" class="form-inline" align="center">
-	<div class="form-group" style="width:80% !important;margin-bottom:0 !important;width:auto;">
+	<div class="form-group" style="width:77.5% !important;margin-bottom:0 !important;width:auto;">
 		<select class="form-control" style="width:100%;" name="sub" required id="exampleFormControlSelect1">
 		<option value="">Choose Subject</option>
 		<?php
@@ -50,7 +50,7 @@ tr:nth-child(even) {
 	{
 		$a=$_POST['sub'];
 		$result=mysqli_query($con, "select distinct teacher from materials where subject='$a'");
-		echo'<table style="width:50%; margin-left:25%" align:"center">
+		echo'<table class="col-12 col-md-6 offset-md-3" align:"center">
 				<tr>
 					<th align="center">Faculty</th>
 					<th align="center" style="width:auto !important;">View</th>
@@ -59,8 +59,9 @@ tr:nth-child(even) {
 			while($row=mysqli_fetch_row($result))
 			{	$_SESSION['sub']=$a;
 				$_SESSION['tec']=$row[0];
+				$rows=mysqli_fetch_row(mysqli_query($con, "select name from stafftable where user='$row[0]'"));
 				echo '  <tr>
-							<td align="center">'.$row[0].'</td>
+							<td align="center">'.$rows[0].'</td>
 							<td align="center" style="width:auto !important;"><a href="topics_down.php" class="btn btn-primary">	View</a></td>
 						</tr>';}
 			echo '</table>';

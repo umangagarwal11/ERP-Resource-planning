@@ -17,8 +17,8 @@ table {
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
+  border: 1px solid #575757;
+  text-align: center;
   padding: 8px;
 }
 
@@ -34,7 +34,7 @@ tr:nth-child(even) {
 		$a=$_SESSION['sub'];
 		$b=$_SESSION['tec'];
 		$result=mysqli_query($con, "select * from materials where subject='$a' and teacher='$b'");
-		echo'<table style="width:50%; margin-left:25%" align:"center">
+		echo'<table class="col-12 col-md-6 offset-md-3" align:"center">
 				<tr>
 					<th align="center">Topic name</th>
 					<th align="center" style="width:auto !important;">Download</th>
@@ -44,7 +44,7 @@ tr:nth-child(even) {
 			{	
 				echo '  <tr>
 							<td align="center">'.$row[1].'</td>
-							<td align="center" style="width:auto !important;"><a href="./uploads/'.$row[0].'_'.$row[1].'.pdf" class="btn btn-primary" download="'.$row[0].'_'.$row[2].'_'.$row[1].'.pdf">	Download</a></td>
+							<td align="center" style="width:auto !important;"><a href="./uploads/'.$row[0].'_'.$row[2].'_'.$row[1].'.pdf" class="btn btn-primary" download="'.$row[0].'_'.$row[1].'.pdf">	Download</a></td>
 						</tr>';}
 			echo '</table>';
 	
