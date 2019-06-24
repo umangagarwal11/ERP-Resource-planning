@@ -25,10 +25,13 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
 </style>
 
 </head>
-<body>
+<body style="background-image:url('./back.jpg');  background-repeat: no-repeat; background-position: center;  background-attachment: fixed; background-size:cover;">
 <br><br><br><br>
 <?php
 		$a=$_SESSION['sub'];

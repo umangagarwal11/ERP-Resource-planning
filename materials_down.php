@@ -25,10 +25,13 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+tr:nth-child(odd) {
+  background-color: #ffffff;
+}
 </style>
 
 </head>
-<body>
+<body style="background-image:url('./back.jpg');  background-repeat: no-repeat; background-position: center;  background-attachment: fixed; background-size:cover;">
 <br><br>
 <div class="card col-12 col-md-6 offset-md-3" align="center" style=" padding:2% 2% 1% 2%;">
 <form action="" method = "post" class="form-inline" align="center">

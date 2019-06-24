@@ -63,7 +63,7 @@
 <link rel = "stylesheet " type = "text/css" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel = "stylesheet" type = "text/css" href = "style.css">
 </head>
-   <body>
+   <body style="background-image:url('./back.jpg');  background-repeat: no-repeat; background-position: center;  background-attachment: fixed; background-size:cover;">
    <div style = "padding-top: 10%; ">
       <div class = "ml-auto mr-auto col-md-3 card"  align = "left">
 	  <br>
